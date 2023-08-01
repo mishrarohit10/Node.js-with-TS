@@ -2,6 +2,7 @@
 const num1Element = document.getElementById('num1');
 const num2Element = document.getElementById('num2');
 const buttonElement = document.querySelector('button');
+//  generic is type that interacts with other types
 const numResults = [];
 const stringResults = [];
 function add(num1, num2) {
@@ -31,4 +32,12 @@ buttonElement.addEventListener('click', () => {
     stringResults.push(stringResult);
     console.log(numResults, stringResults);
     printResult({ val: result, timestamp: new Date() });
+});
+const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('It worked!');
+    }, 1000);
+});
+myPromise.then(result => {
+    console.log(result.split('w'));
 });
