@@ -29,5 +29,6 @@ buttonElement.addEventListener('click', () => {
     // console.log(stringResult);
     numResults.push(result);
     stringResults.push(stringResult);
+    console.log(numResults, stringResults);
     printResult({ val: result, timestamp: new Date() });
 });

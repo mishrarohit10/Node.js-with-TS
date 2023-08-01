@@ -5,6 +5,14 @@ const buttonElement = document.querySelector('button') as HTMLButtonElement;
 const numResults: number[] = [];
 const stringResults: string[] = [];
 
+type NumOrString = number | string;
+type Result = { val: number, timestamp: Date };
+
+//  forces class to implement certain methods
+interface ResultObj {
+    val: number;
+    timestamp: Date;
+}
 
 function add(num1: number | string, num2: number | string) {
     if (typeof num1 === 'number' && typeof num2 === 'number') {
@@ -33,6 +41,7 @@ buttonElement.addEventListener('click', () => {
     // console.log(stringResult);
     numResults.push(result as number);
     stringResults.push(stringResult as string);
+    console.log(numResults, stringResults);
     printResult({ val: result as number, timestamp: new Date() });
 });
 
